@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Violations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .back-link {
+      display: block;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1>View Violations</h1>
+
+    <form action="view_violations.php" method="GET">
+      <div class="form-group">
+        <label for="vehicle_id">Enter Vehicle ID:</label>
+        <input type="text" class="form-control" id="vehicle_id" name="vehicle_id" required>
+      </div>
+      <button type="submit" class="btn btn-primary">View Violations</button>
+    </form>
+
+    <div id="violation-table">
+      <!-- The PHP script will dynamically populate the table here -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

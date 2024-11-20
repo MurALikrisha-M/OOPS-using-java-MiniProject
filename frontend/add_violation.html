@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Violation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  /* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar styling */
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  margin-right: 10px;
+}
+
+/* Main container */
+.container {
+  max-width: 600px;
+}
+
+/* Form styling */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+form .form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+form .form-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+form .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.d-grid {
+  margin-top: 20px;
+}
+
+/* Media Query for mobile responsiveness */
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    margin-right: 0;
+  }
+}
+
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Traffic Violation Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="officer_dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="view_violations.html">View Violations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h1 class="mb-4">Add Violation</h1>
+    <form method="POST" action="add_violation.php" class="shadow-lg p-5 rounded">
+      <div class="mb-3">
+        <label for="vehicle-id" class="form-label">Vehicle ID:</label>
+        <input type="text" class="form-control" id="vehicle-id" name="vehicle_id" required>
+      </div>
+      <div class="mb-3">
+        <label for="owner-name" class="form-label">Owner Name:</label>
+        <input type="text" class="form-control" id="owner-name" name="owner_name" required>
+      </div>
+      <div class="mb-3">
+        <label for="vehicle-model" class="form-label">Vehicle Model:</label>
+        <input type="text" class="form-control" id="vehicle-model" name="vehicle_model" required>
+      </div>
+      <div class="mb-3">
+        <label for="violation-type" class="form-label">Violation Type:</label>
+        <input type="text" class="form-control" id="violation-type" name="violation_type" required>
+      </div>
+      <div class="mb-3">
+        <label for="violation-date" class="form-label">Violation Date:</label>
+        <input type="date" class="form-control" id="violation-date" name="violation_date" required>
+      </div>
+      <div class="mb-3">
+        <label for="fine-amount" class="form-label">Fine Amount:</label>
+        <input type="number" class="form-control" id="fine-amount" name="fine_amount" required>
+      </div>
+      <div class="mb-3">
+        <label for="payment-status" class="form-label">Payment Status:</label>
+        <select class="form-control" id="payment-status" name="payment_status" required>
+          <option value="pending">Pending</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Add Violation</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
